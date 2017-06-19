@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>100K Countdown</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <h1 id="countdown">hii</h1>
+  <script type="text/javascript">
+    var count = 10
+    var countdown = document.getElementById('countdown');
+
+    function second() {
+      countdown.textContent = count;
+      count--;
+      if (count < 0) {
+        endTimer(startTimer);
+        countdown.textContent = 'Woohooo!!'
+      }
+    };
+    var startTimer = setInterval(function() {
+      second(countdown, count);
+      }, 1000);
+
+    function endTimer(starter) {
+      clearInterval(starter)
+    }
+  </script>
+</body>
+</html>
